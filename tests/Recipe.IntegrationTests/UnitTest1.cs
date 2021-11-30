@@ -1,12 +1,6 @@
-using Xunit;
-
-namespace Recipe.IntegrationTests;
-
-public class UnitTest1
+namespace Recipe.IntegrationTests
 {
-    [Fact]
-    public void Test1()
+    public class Class1
     {
-
     }
 }

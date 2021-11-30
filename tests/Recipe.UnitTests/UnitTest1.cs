@@ -1,11 +1,6 @@
-using Xunit;
-
-namespace Recipe.UnitTests;
-
-public class UnitTest1
+namespace Recipe.UnitTests
 {
-    [Fact]
-    public void Test1()
+    public class Class1
     {
 
     }
