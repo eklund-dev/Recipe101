@@ -22,11 +22,14 @@ namespace Recipe.WebApi.Controllers
         {
             _logger = logger;
         }
-
+            
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
+            var rngNumber = rng.Next(1, 10);
+            _logger.LogWarning("Fetching data using random number: {@rngNumber} get method", rngNumber);
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),

@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Recipe.Application;
+using Recipe.Persistance;
 using Recipe.WebApi.Installers;
 
 namespace Recipe.WebApi
@@ -21,7 +23,9 @@ namespace Recipe.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.InstallServicesInAssembly(Configuration);
-            
+            services.AddPersistanceServices(Configuration);
+            services.AddApplicationServices();
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddCors(options =>
